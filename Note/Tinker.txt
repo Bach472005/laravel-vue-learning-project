@@ -1,0 +1,2 @@
+Product::with('image')->get() -> return an array of product with array of image xD
+User::with('listing')->get() -> return an array of user with array of listing XD
