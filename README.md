@@ -1,5 +1,5 @@
 # laravel-vue-learning-project
-A demo project built with Laravel and Vue.js as part of my learning journey. This app includes basic CRUD operations, authentication, and API integration. The goal is to practice full-stack development and prepare for more advanced projects.
+Một dự án được xây dựng bằng Laravel và Vue.js trong quá trình học. Dự án gồm các thao tác CRUD, authentication, và tích hợp API. Mục tiêu của dự án là luyện tập code full-stack và chuẩn bị cho nhiều dự án nâng cao hơn trong tương lai.
 Stack sử dụng: Laravel, Vue.js, Tailwind CSS
 Hướng dẫn cài đặt và chạy:
 git clone ...
