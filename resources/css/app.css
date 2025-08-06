@@ -1,0 +1,74 @@
+/* @import "tailwindcss"; */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components {
+    .label {
+      @apply block mb-1 text-gray-500 dark:text-gray-300 font-medium;
+    }
+    .input {
+      @apply block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500;
+    }
+    .btn-primary{
+      @apply bg-indigo-600 hover:bg-indigo-500 text-white font-medium p-2 rounded-md;
+    }
+    .btn-normal{
+      @apply bg-gray-600 hover:bg-gray-500 text-white font-medium p-2 rounded-md;
+    }
+    .btn-danger{
+      @apply bg-red-600 hover:bg-red-700 text-white font-medium p-2 rounded
+    }
+    .btn-outline {
+      @apply p-2 rounded-md border shadow-sm border-gray-300 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-700 dark:hover:bg-gray-800
+    }
+    .input-error{
+      @apply text-sm text-red-500 dark:text-red-400;
+    }
+    .success {
+      @apply text-sm text-white bg-green-600 border border-green-500 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-300 rounded-lg px-4 py-2 transition-all duration-300 ease-in-out dark:bg-green-500 dark:border-green-400 dark:hover:bg-green-600 dark:focus:ring-green-200;
+    }
+    .input-filter-l {
+      @apply placeholder:text-gray-400 dark:placeholder:text-gray-600 border border-l-0 border-gray-200 dark:border-gray-700 rounded-t-md rounded-l-md rounded-b-md rounded-r-none text-sm font-medium text-gray-600 dark:text-gray-400 dark:bg-gray-800
+    }
+    .input-filter-r {
+      @apply placeholder:text-gray-400 dark:placeholder:text-gray-600 border border-r-0 border-gray-200 dark:border-gray-700 rounded-t-md rounded-l-none rounded-b-none rounded-r-md text-sm font-medium text-gray-600 dark:text-gray-400 dark:bg-gray-800
+    }
+  }
+.toast-message {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #f8d7da;      /* màu nền đỏ nhạt */
+  color: #721c24;                /* màu chữ đỏ đậm */
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 1px solid #f5c6cb;
+  font-weight: 500;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: none;
+  z-index: 9999;
+  animation: slideIn 0.3s ease;
+}
+
+#toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ffdede;
+  color: darkred;
+  padding: 12px 20px;
+  border-left: 4px solid red;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+#toast.show {
+  opacity: 1;
+}

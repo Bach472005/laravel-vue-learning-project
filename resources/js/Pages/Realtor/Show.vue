@@ -1,0 +1,51 @@
+<template>
+    <MainLayout>
+        <Link :href="route('realtor.listing.index')">Go Back to Listings</Link>
+
+        <section class="flex flex-col-reverse md:grid md:grid-cols-12 gap-4">
+            <Box v-if="!hasOffers" class="flex md:col-span-7 items-center">
+                <div class="w-full text-center font-medium text-gray-500">
+                    No offers
+                </div>
+            </Box>
+            <div v-else class="md:col-span-7 flex flex-col gap-4">
+                <Offer
+                    v-for="offer in listing.offers"
+                    :key="offer.id"
+                    :offer="offer"
+                    :listingPrice="listing.price"
+                    
+                />
+            </div>
+
+            <div class="md:col-span-5">
+                <Box>
+                    <template #header>Basic Info</template>
+                    <Price :price="listing.price" class="text-2xl font-bold" />
+
+                    <ListingSpace :listing="listing" class="text-lg" />
+                    <ListingAddress :listing="listing" />
+                </Box>
+            </div>
+            
+        </section>
+    </MainLayout>
+</template>
+
+<script setup>
+import ListingAddress from "@/Components/Listing/ListingAddress.vue";
+import ListingSpace from "@/Components/Listing/ListingSpace.vue";
+import Price from "@/Components/Listing/Price.vue";
+import Box from "@/Components/UI/Box.vue";
+import MainLayout from "@/Layouts/MainLayout.vue";
+import { Link } from "@inertiajs/vue3";
+import { computed } from "vue";
+import Offer from "@/Pages/Realtor/Show/Components/Offer.vue";
+
+const props = defineProps({
+    listing: Object,
+});
+
+const hasOffers = computed(() => props.listing.offers.length);
+console.log(props.listing);
+</script>

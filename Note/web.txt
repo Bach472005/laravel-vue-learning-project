@@ -1,0 +1,7 @@
+Composables -> vueuse.org
+- Composables là một khái niệm quan trọng trong Vue.js 3,
+đây là một cách tiếp cận mới để tạo và tái sử dụng logic trong các component.
+- Composables cho phép bạn tách biệt logic từ các component giao diện người dùng
+và viết lại logic đó dưới dạng các hàm tái sử dụng Trong Vue.js 3
+
+Pagination: return the values = object
