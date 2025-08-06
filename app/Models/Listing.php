@@ -38,8 +38,20 @@ class Listing extends Model
         );
     }
     
-    public function scopeMostRecent(EloquentBuilder $query){
+    public function scopeMostRecent(EloquentBuilder $query)
+    {
         return $query->orderByDesc('created_at');
+    }
+
+    public function scopeWithoutSold(EloquentBuilder $query)
+    {
+        // return $query->doesntHave('offers')
+        //     ->orWhereHas(
+        //     'offers',
+        //     fn(EloquentBuilder $query) => $query->whereNull('accepted_at')
+        //                 ->whereNull('rejected_at')
+        //         );
+        return $query->whereNull('sold_at');
     }
 
     public function scopeFilter (EloquentBuilder $query, array $filters){

@@ -8,22 +8,26 @@
                     No offers
                 </div>
             </Box>
-            <div v-else class="md:col-span-7 items-center">
+            <div v-else class="md:col-span-7 flex flex-col gap-4">
                 <Offer
                     v-for="offer in listing.offers"
                     :key="offer.id"
                     :offer="offer"
                     :listingPrice="listing.price"
-                    class="mb-4"
+                    
                 />
             </div>
-            <Box class="md:col-span-5">
-                <template #header>Basic Info</template>
-                <Price :price="listing.price" class="text-2xl font-bold" />
 
-                <ListingSpace :listing="listing" class="text-lg" />
-                <ListingAddress :listing="listing" />
-            </Box>
+            <div class="md:col-span-5">
+                <Box>
+                    <template #header>Basic Info</template>
+                    <Price :price="listing.price" class="text-2xl font-bold" />
+
+                    <ListingSpace :listing="listing" class="text-lg" />
+                    <ListingAddress :listing="listing" />
+                </Box>
+            </div>
+            
         </section>
     </MainLayout>
 </template>
