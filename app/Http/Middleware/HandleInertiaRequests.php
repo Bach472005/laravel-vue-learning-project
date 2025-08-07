@@ -41,6 +41,10 @@ class HandleInertiaRequests extends Middleware
                 'id' => $request->user()->id,
                 'name' => $request->user()->name,
                 'email' => $request->user()->email,
+                // The first one will get data then count
+                // The second one will run count query -> more efficient!
+                // 'notificationCount' => $request->user()->unreadNotifications->count()
+                'notificationCount' => $request->user()->unreadNotifications()->count()
             ] : null
             
         ];

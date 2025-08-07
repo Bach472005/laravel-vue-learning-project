@@ -23,7 +23,7 @@ class Listing extends Model
             ListingImage::class,
         );
     }
-    public function user()
+    public function owner()
     {
         return $this->belongsTo(
             User::class,
