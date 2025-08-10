@@ -1,14 +1,14 @@
 <template>
     <MainLayout>
         <div class="flex flex-col-reverse gap-4 md:grid md:grid-cols-12">
-            <Box class="flex w-full items-center md:col-span-7">
-                <div v-if="listing.images.length" class="grid grid-cols-2 gap-1">
+            <Box v-if="listing.images.length" class="w-full flex items-center md:col-span-7">
+                <div  class="grid grid-cols-2 gap-1">
                     <img v-for="image in listing.images" :key="image.id" :src="image.src" class="h-3/5 w-full">
                 </div>
-                <div v-else class="w-full text-center font-medium text-gray-500">
-                    No Images
-                </div>
             </Box>
+            
+            <EmptyState v-else class="flex w-full items-center md:col-span-7">No images</EmptyState>
+            
             <div class="flex flex-col gap-4 md:col-span-5">
                 <Box>
                     <template #header>Basic info</template>
@@ -92,6 +92,7 @@ import OfferMade from '@/Pages/List/Show/Components/OfferMade.vue';
 import { computed, ref } from 'vue';
 import { useMonthlyPayment } from '@/Composables/useMonthlyPayment';
 import { usePage } from '@inertiajs/vue3';
+import EmptyState from '@/Components/UI/EmptyState.vue';
 
 const interstRate = ref(2.5);
 const duration = ref(25);

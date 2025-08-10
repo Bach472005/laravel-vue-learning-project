@@ -1,10 +1,12 @@
 <template>
     <MainLayout>
         <h1 class="text-3xl mb-4">Your Listings</h1>
+
         <section class="mb-8">
             <RealtorFilters :filters="filters" />
         </section>
-        <section class="grid grid-cols-1 lg:grid-cols-2 gap-2">
+
+        <section v-if="listings.data.length" class="grid grid-cols-1 lg:grid-cols-2 gap-2">
             <Box v-for="listing in listings.data" :key="listing.id" :class="{
                 'border-dashed border-red-500 dark:border-red-800':
                     listing.deleted_at,
@@ -62,6 +64,7 @@
                 </div>
             </Box>
         </section>
+        <EmptyState v-else>No listings yet</EmptyState>
         <div v-if="listings && listings.data && listings.data.length" class="w-full flex justify-center mt-4 mb-4">
             <Pagination :links="listings.links" />
         </div>
@@ -77,6 +80,7 @@ import MainLayout from "@/Layouts/MainLayout.vue";
 import { Link } from "@inertiajs/vue3";
 import RealtorFilters from "@/Pages/Realtor/Index/Components/RealtorFilters.vue";
 import Pagination from "@/Components/UI/Pagination.vue";
+import EmptyState from "@/Components/UI/EmptyState.vue";
 
 const props = defineProps({
     listings: Object,
