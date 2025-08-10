@@ -1,14 +1,6 @@
 # laravel-vue-learning-project
 Một dự án được xây dựng bằng Laravel và Vue.js trong quá trình học. Dự án gồm các thao tác CRUD, authentication, và tích hợp API. Mục tiêu của dự án là luyện tập code full-stack và chuẩn bị cho nhiều dự án nâng cao hơn trong tương lai.
-Stack sử dụng: Laravel, Vue.js, Tailwind CSS
-Hướng dẫn cài đặt và chạy:
-git clone ...
-cd project
-composer install
-npm install
-php artisan migrate
-npm run dev
-php artisan serve
+Stack sử dụng: Laravel, Vue.js, Tailwind CSS, Docker
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
